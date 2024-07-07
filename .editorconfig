@@ -1,5 +1,7 @@
 root = true
 
 [*]
+; Use LF line endings for all files
 end_of_line = lf
+; Ensure files end with a newline
 insert_final_newline = true
