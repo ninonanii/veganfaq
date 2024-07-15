@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	// let the user select a language
+	import { locales } from '$lib/config'
+</script>
+
+<h1>Select a language</h1>
+
+<ul>
+	{#each locales as locale}
+		<li>
+			<a href="/{locale}">{locale}</a>
+		</li>
+	{/each}
+</ul>
