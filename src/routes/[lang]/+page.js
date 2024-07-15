@@ -5,7 +5,7 @@ import { locales } from '$lib/config'
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	return locales.map((locale) => ({
-		slug: locale
+		lang: locale
 	}))
 }
 
@@ -26,6 +26,7 @@ export async function load({ params }) {
 
 	return {
 		lang: params.lang,
-		data
+		data,
+		params
 	}
 }
