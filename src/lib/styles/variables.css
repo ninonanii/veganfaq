@@ -1,0 +1,39 @@
+:root {
+	/* colors */
+	--primary: var(--blue-1);
+	--secondary: var(--green-1);
+	--tertiary: var(--yellow-1);
+	--primary-secondary-mix: color-mix(in lch, var(--primary) 40%, var(--secondary) 60%);
+	--primary-light: hsl(from var(--primary) calc(h) s l / 0.5);
+	--success: var(--green-1);
+	--warning: var(--yellow-1);
+	--danger: var(--red-1);
+	--info: var(--blue-1);
+	--disabled: var(--gray-3);
+	--brand: var(--pink-9);
+	--text-1: var(--gray-1);
+	--bg-1: var(--gray-9);
+	--border-color: var(--gray-7);
+
+	/* fonts */
+	--font-family: system-ui, sans-serif;
+	--font-family-mono: ui-monospace, monospace;
+
+	/* animation */
+	--time-default: 0.2s;
+	--transition: var(--time-default) var(--ease-3);
+
+	/* z-index */
+	--layer-skip-link: 50;
+
+	@media (--OSlight) {
+		--brand: var(--pink-1);
+		--text-1: var(--gray-9);
+		--bg-1: var(--gray-1);
+		--border-color: var(--gray-3);
+	}
+
+	@media (--motionNotOK) {
+		--time-default: 0s;
+	}
+}

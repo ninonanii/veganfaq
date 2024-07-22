@@ -1,0 +1,34 @@
+html {
+}
+
+body {
+	font-family: var(--font-family);
+	color: var(--text-1);
+	font-size: var(--size-3);
+	line-height: var(--line-height-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-block-start: 0;
+	hyphens: auto;
+	overflow-wrap: anywhere;
+	text-wrap: balance;
+}
+
+p {
+	margin-block: 0 var(--size-3);
+	text-wrap: pretty;
+
+	&:last-of-type {
+		margin-block-end: 0;
+	}
+}
+
+[contenteditable] {
+	text-wrap: stable;
+}

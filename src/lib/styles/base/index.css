@@ -1,0 +1,43 @@
+@import './container.css';
+@import './typography.css';
+
+@media (--motionNotOK) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+::selection {
+	background-color: var(--brand);
+	color: var(--text-1);
+}
+
+:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+html {
+	color-scheme: dark light;
+	text-rendering: optimizeLegibility;
+	min-height: 100dvh;
+}
+
+@keyframes page-transition {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+}
+
+::view-transition-new(root) {
+	animation: 0.2s linear both page-transition;
+}
