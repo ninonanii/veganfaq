@@ -1,10 +1,10 @@
-<script context="module">
-	const enData = (await import(`$lib/locales/en.json`)).default
-</script>
-
 <script>
 	// let the user select a language
 	import { locales } from '$lib/config'
+
+	export let data
+
+	const enData = data.data
 </script>
 
 <svelte:head>
