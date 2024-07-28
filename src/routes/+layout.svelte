@@ -2,6 +2,7 @@
 	import '$lib/styles/global.css'
 
 	import { onNavigate } from '$app/navigation'
+	import { languageData } from '$lib/scripts/stores/language.js'
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return
@@ -16,8 +17,8 @@
 </script>
 
 <svelte:head>
-	<title>Vegan FAQ</title>
-	<meta name="description" content="Vegan FAQ" />
+	<title>{$languageData?.meta?.title}</title>
+	<meta name="description" content={$languageData?.meta?.description} />
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
 	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
 </svelte:head>
