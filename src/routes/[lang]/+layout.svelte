@@ -1,8 +1,15 @@
 <script>
+	import { languageData } from '$lib/scripts/stores/language.js'
+
 	import SkipLinks from '$lib/components/skip-links.svelte'
 	import Nav from '$lib/components/nav.svelte'
 	import Footer from '$lib/components/footer.svelte'
 </script>
+
+<svelte:head>
+	<title>{$languageData?.meta?.title}</title>
+	<meta name="description" content={$languageData?.meta?.description} />
+</svelte:head>
 
 <SkipLinks />
 <div class="page">
