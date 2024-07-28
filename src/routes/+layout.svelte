@@ -18,6 +18,11 @@
 <svelte:head>
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
 	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+	<script
+		data-goatcounter="https://veganfaq.goatcounter.com/count"
+		async
+		src="//gc.zgo.at/count.js"
+	></script>
 </svelte:head>
 
 <slot />

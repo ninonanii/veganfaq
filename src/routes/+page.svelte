@@ -1,6 +1,4 @@
 <script context="module">
-	export const prerender = true
-
 	const enData = (await import(`$lib/locales/en.json`)).default
 </script>
 
