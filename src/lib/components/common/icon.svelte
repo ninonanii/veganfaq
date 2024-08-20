@@ -3,7 +3,7 @@
 </script>
 
 {#await import(`../../icons/${name}.svelte`)}
-	<div class="icon-wrapper" aria-hidden="true" />
+	<div class="icon-wrapper" aria-hidden="true"></div>
 {:then { default: IconComponent }}
 	<div class="icon-wrapper" role="img" aria-label={name}>
 		<svelte:component this={IconComponent} />

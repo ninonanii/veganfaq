@@ -3,9 +3,13 @@
 
 	import { languageData } from '$lib/scripts/stores/language.js'
 
+	import Icon from '$lib/components/common/icon.svelte'
+
 	languageData.set(data.data)
 
 	const t = (key) => $languageData?.[key] || key
+
+	const labels = $languageData
 
 	const faqs = $languageData?.faqs || []
 
@@ -37,15 +41,23 @@
 </svelte:head>
 
 <div class="container">
-	<h1>{t('welcomeMessage')}</h1>
+	<h1>{labels.welcomeMessage}</h1>
 
 	{#each faqs as faq}
 		<article>
-			<h2>{faq.question}</h2>
+			<div class="article-header">
+				<h2>{faq.question}</h2>
+				<div class="article-header-icons">
+					<a
+						href={getPerplexityUrl(faq.question)}
+						target="_blank"
+						aria-label={labels.labels.perplexityLink}
+						title={labels.labels.perplexityLink}><Icon name="perplexity" /></a
+					>
+				</div>
+			</div>
 
-			<p>
-				<a href={getPerplexityUrl(faq.question)} target="_blank">Perplexity</a>
-			</p>
+			<p></p>
 
 			{#each faq.youtubeVideos as video}
 				<!--iframe
@@ -59,11 +71,26 @@
 			/-->
 			{/each}
 			{#each faq.links as link}
-				<a href={link}>{link}</a>
+				<a href={link} target="_blank">{link}</a>
 			{/each}
 		</article>
 	{/each}
 </div>
 
 <style>
+	.article-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: var(--size-3);
+	}
+
+	.article-header-icons {
+		display: flex;
+		gap: var(--size-3);
+	}
+
+	.article-header-icons a {
+		display: inline-flex;
+	}
 </style>

@@ -32,3 +32,11 @@ p {
 [contenteditable] {
 	text-wrap: stable;
 }
+
+a {
+	color: var(--brand);
+}
+
+a:visited {
+	color: var(--brand-dark);
+}

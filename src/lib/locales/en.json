@@ -7,7 +7,8 @@
 	},
 	"labels": {
 		"mainNav": "Main navigation",
-		"mainFooter": "Footer"
+		"mainFooter": "Footer",
+		"perplexityLink": "Ask Question on Perplexity"
 	},
 	"faqs": [
 		{

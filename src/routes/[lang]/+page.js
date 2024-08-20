@@ -5,7 +5,7 @@ import { locales } from '$lib/config'
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	return locales.map((locale) => ({
-		lang: locale
+		lang: locale.code
 	}))
 }
 
@@ -16,8 +16,8 @@ export const prerender = true
 export async function load({ params }) {
 	const lang = params.lang.toLowerCase()
 
-	// if lang is not in locales, throw 404
-	if (!locales.includes(lang)) {
+	// if there is no locale.code the same as lang, throw 404
+	if (!locales.find((locale) => locale.code === lang)) {
 		error(404, 'Language not found')
 	}
 
