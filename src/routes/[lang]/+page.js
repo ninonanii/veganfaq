@@ -22,7 +22,11 @@ export async function load({ params }) {
 	}
 
 	// Load language-specific JSON data
-	const data = (await import(`$lib/locales/${lang}.json`)).default
+	// const data = (await import(`$lib/locales/${lang}.json`)).default
+
+	// load language-specific markdown data
+	const moduleMd = await import(`$lib/locales/${lang}.md`)
+	const data = moduleMd.attributes
 
 	return {
 		lang: params.lang,

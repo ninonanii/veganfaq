@@ -13,6 +13,8 @@
 
 	const faqs = $languageData?.faqs || []
 
+	console.log(faqs)
+
 	const getPerplexityUrl = (question) => {
 		return `https://perplexity.ai/search?q=${encodeURIComponent(question)}`
 	}
@@ -43,24 +45,26 @@
 <div class="container">
 	<h1>{labels.welcomeMessage}</h1>
 
-	{#each faqs as faq}
-		<article>
-			<div class="article-header">
-				<h2>{faq.question}</h2>
-				<div class="article-header-icons">
-					<a
-						href={getPerplexityUrl(faq.question)}
-						target="_blank"
-						aria-label={labels.labels.perplexityLink}
-						title={labels.labels.perplexityLink}><Icon name="perplexity" /></a
-					>
+	<div class="articles">
+		{#each faqs as faq}
+			<article>
+				<div class="article-header">
+					<h2>{faq.question}</h2>
+					<div class="article-header-icons">
+						<a
+							href={getPerplexityUrl(faq.question)}
+							target="_blank"
+							aria-label={labels.labels.perplexityLink}
+							title={labels.labels.perplexityLink}><Icon name="perplexity" /></a
+						>
+					</div>
 				</div>
-			</div>
 
-			<p></p>
+				<p>{@html faq.answer}</p>
 
-			{#each faq.youtubeVideos as video}
-				<!--iframe
+				{#if faq.youtubeVideos}
+					{#each faq.youtubeVideos as video}
+						<!--iframe
 				width="560"
 				height="315"
 				src={video}
@@ -69,15 +73,25 @@
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen
 			/-->
-			{/each}
-			{#each faq.links as link}
-				<a href={link} target="_blank">{link}</a>
-			{/each}
-		</article>
-	{/each}
+					{/each}
+				{/if}
+				{#if faq.links}
+					{#each faq.links as link}
+						<a href={link} target="_blank">{link}</a>
+					{/each}
+				{/if}
+			</article>
+		{/each}
+	</div>
 </div>
 
 <style>
+	.articles {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--size-8);
+	}
+
 	.article-header {
 		display: flex;
 		justify-content: space-between;
