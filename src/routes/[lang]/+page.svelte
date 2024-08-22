@@ -13,8 +13,6 @@
 
 	const faqs = $languageData?.faqs || []
 
-	console.log(faqs)
-
 	const getPerplexityUrl = (question) => {
 		return `https://perplexity.ai/search?q=${encodeURIComponent(question)}`
 	}

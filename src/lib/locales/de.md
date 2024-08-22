@@ -12,5 +12,12 @@ faqs:
   - question: 'Kann ich meinen Hund vegan füttern?'
     answer: 'Ja'
   - question: 'Mit welchen Zutaten kann ich vegan kochen?'
-    answer: 'Tempeh, Tofu'
+    answer: '
+			Folgendes:
+
+			<ul>
+				<li>Tempeh</li>
+				<li>Tofu</li>
+			</ul>
+		'
 ---
