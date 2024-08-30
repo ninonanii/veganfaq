@@ -34,6 +34,27 @@
 	const structuredDataString = `<script type="application/ld+json">${JSON.stringify(
 		structuredData
 	)}<\/script>`
+
+	const questionToId = (question) => {
+		const regex = /[^\w\s]/gi
+
+		return question.replace(regex, '').toLowerCase().split(' ').join('-')
+	}
+
+	const getQuestionLink = (question) => {
+		return window.location.origin + window.location.pathname + `#${questionToId(question)}`
+	}
+
+	const copyQuestionToClipboard = (question) => {
+		navigator.clipboard
+			.writeText(getQuestionLink(question))
+			.then(() => {
+				console.log('Copied: ', getQuestionLink(question))
+			})
+			.catch((err) => {
+				console.error('Failed to copy: ', err)
+			})
+	}
 </script>
 
 <svelte:head>
@@ -45,15 +66,21 @@
 
 	<div class="articles">
 		{#each faqs as faq}
-			<article>
+			<article class="article" id={questionToId(faq.question)}>
 				<div class="article-header">
-					<h2>{faq.question}</h2>
+					<h2 class="article-title">{faq.question}</h2>
 					<div class="article-header-icons">
 						<a
 							href={getPerplexityUrl(faq.question)}
 							target="_blank"
 							aria-label={labels.labels.perplexityLink}
 							title={labels.labels.perplexityLink}><Icon name="perplexity" /></a
+						>
+						<button
+							aria-label={labels.labels.shareLink}
+							title={labels.labels.shareLink}
+							onclick={() => copyQuestionToClipboard(faq.question)}
+							><Icon name="clipboard-link" /></button
 						>
 					</div>
 				</div>
@@ -84,10 +111,20 @@
 </div>
 
 <style>
+	h1 {
+		margin-block-end: var(--size-10);
+	}
+
 	.articles {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		gap: var(--size-8);
+	}
+
+	.article {
+		scroll-margin: var(--size-8);
+		display: grid;
+		gap: var(--size-6);
 	}
 
 	.article-header {
@@ -97,9 +134,17 @@
 		gap: var(--size-3);
 	}
 
+	.article-title {
+		margin: 0;
+	}
+
 	.article-header-icons {
 		display: flex;
 		gap: var(--size-3);
+	}
+
+	.article-header-icons button {
+		color: var(--brand);
 	}
 
 	.article-header-icons a {
