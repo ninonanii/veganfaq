@@ -11,6 +11,7 @@ labels:
   pickLanguage: 'Sprache auswählen'
   perplexityLink: 'Stelle die Frage auf Perplexity'
   shareLink: 'Teilen'
+  copiedToClipboard: 'In die Zwischenablage kopiert'
 faqs:
   - question: 'Was ist Veganismus?'
     answer: 'Veganismus ist eine Lebensweise, die alle tierischen Produkte ausschließt, einschließlich Fleisch, Milchprodukte, Eier und Honig sowie Produkte, die an Tieren getestet wurden. Er ist durch ethische, ökologische und gesundheitliche Überlegungen motiviert.'

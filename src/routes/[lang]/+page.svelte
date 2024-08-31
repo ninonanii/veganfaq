@@ -4,6 +4,9 @@
 	import { languageData } from '$lib/scripts/stores/language.js'
 
 	import Icon from '$lib/components/common/icon.svelte'
+	import Toasts from '$lib/components/toasts.svelte'
+
+	let toastsComp
 
 	languageData.set(data.data)
 
@@ -50,9 +53,11 @@
 			.writeText(getQuestionLink(question))
 			.then(() => {
 				console.log('Copied: ', getQuestionLink(question))
+				toastsComp.toast(labels.labels.copiedToClipboard)
 			})
 			.catch((err) => {
 				console.error('Failed to copy: ', err)
+				toastsComp.toast('Failed to copy: ' + err)
 			})
 	}
 </script>
@@ -109,6 +114,8 @@
 		{/each}
 	</div>
 </div>
+
+<Toasts bind:this={toastsComp} />
 
 <style>
 	h1 {

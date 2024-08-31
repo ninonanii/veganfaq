@@ -11,6 +11,7 @@ labels:
   pickLanguage: 'Pick language'
   perplexityLink: 'Ask Question on Perplexity'
   shareLink: 'Share'
+  copiedToClipboard: 'Copied to clipboard'
 links:
   - link: 'https://www.reddit.com/r/VeganFoodPorn/'
     name: 'Vegan Food Pics'
