@@ -50,17 +50,11 @@ faqs:
   - question: 'Can vegans eat at restaurants?'
     answer: 'Yes, many restaurants offer vegan options, and it’s becoming easier to find vegan-friendly eateries. You can also request modifications to dishes to make them vegan.'
 
-  - question: 'Is honey vegan?'
-    answer: 'No, honey is not considered vegan because it is produced by bees. Many vegans avoid honey to prevent the exploitation of bees.'
-
   - question: 'What’s the difference between vegan and vegetarian?'
     answer: 'Vegetarians avoid meat, but may consume dairy and eggs. Vegans avoid all animal products, including dairy, eggs, and honey.'
 
   - question: 'Do vegans miss out on essential nutrients?'
     answer: 'With careful planning, vegans can meet all their nutrient needs. Key nutrients to monitor include protein, iron, calcium, omega-3 fatty acids, and vitamin B12.'
-
-  - question: 'How do I start going vegan?'
-    answer: 'Start by gradually replacing animal products with plant-based alternatives. Educate yourself on nutrition, try new recipes, and explore vegan communities for support.'
 
   - question: 'What do vegans do for clothing and cosmetics?'
     answer: 'Vegans avoid clothing made from animal products like leather, wool, and silk. They also choose cruelty-free cosmetics that are not tested on animals and don’t contain animal-derived ingredients.'

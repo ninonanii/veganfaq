@@ -43,17 +43,11 @@ faqs:
   - question: 'Können Veganer in Restaurants essen?'
     answer: 'Ja, viele Restaurants bieten vegane Optionen an, und es wird immer einfacher, vegane Restaurants zu finden. Du kannst auch Gerichte so abändern lassen, dass sie vegan sind.'
 
-  - question: 'Ist Honig vegan?'
-    answer: 'Nein, Honig gilt nicht als vegan, da er von Bienen produziert wird. Viele Veganer meiden Honig, um die Ausbeutung von Bienen zu verhindern.'
-
   - question: 'Was ist der Unterschied zwischen vegan und vegetarisch?'
     answer: 'Vegetarier meiden Fleisch, können aber Milchprodukte und Eier konsumieren. Veganer meiden alle tierischen Produkte, einschließlich Milchprodukte, Eier und Honig.'
 
   - question: 'Fehlt Veganern essenzielle Nährstoffe?'
     answer: 'Mit sorgfältiger Planung können Veganer alle notwendigen Nährstoffe erhalten. Wichtige Nährstoffe, die überwacht werden sollten, sind Eiweiß, Eisen, Kalzium, Omega-3-Fettsäuren und Vitamin B12.'
-
-  - question: 'Wie fange ich an, vegan zu werden?'
-    answer: 'Fange damit an, tierische Produkte nach und nach durch pflanzliche Alternativen zu ersetzen. Informiere dich über Ernährung, probiere neue Rezepte aus und erkunde vegane Gemeinschaften für Unterstützung.'
 
   - question: 'Was machen Veganer bei Kleidung und Kosmetik?'
     answer: 'Veganer vermeiden Kleidung aus tierischen Produkten wie Leder, Wolle und Seide. Sie wählen auch tierversuchsfreie Kosmetika, die nicht an Tieren getestet werden und keine tierischen Inhaltsstoffe enthalten.'
